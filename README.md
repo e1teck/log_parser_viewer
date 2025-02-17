@@ -6,7 +6,7 @@
 
 ```bash
 pip install poetry
-poetry install
+poetry install --no-root
 ```
 
 запустите скрипт парсера

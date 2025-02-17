@@ -1,0 +1,18 @@
+import pkgutil
+from functools import cache
+from pathlib import Path
+
+
+@cache
+def load_all_models() -> None:
+    """Load all models from this folder."""
+    package_dir = Path(__file__).resolve().parent
+    modules = pkgutil.walk_packages(
+        path=[str(package_dir)],
+        prefix="app.db.models.",
+    )
+    for module in modules:
+        __import__(module.name)  # noqa: WPS421
+
+
+load_all_models()
