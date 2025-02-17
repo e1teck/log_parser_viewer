@@ -9,6 +9,10 @@ pip install poetry
 poetry install --no-root
 ```
 
+обновите postgres RW_DSN в файле `log_parser/app/config.py`
+
+```postgresql://postgres:postgres@127.0.0.1:55432/log_messages```
+
 запустите скрипт парсера
 
 ```bash
